@@ -1,1 +1,1 @@
-# Splash Landing-Page
+# Splash Landing Page
