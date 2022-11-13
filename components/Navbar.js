@@ -4,25 +4,33 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <nav className="max-w-100vw flex justify-between pt-20 pb-10 pl-20 pr-24">
+    <nav className="max-w-100vw flex-col pt-20 pb-10 pl-20 pr-24 sm:flex-row md:flex md:justify-between">
       <div className="logo">
         <Link
           href="/"
-          className="text-primary text-5xl mb-6 text-center text-xl5 font-bold  text-black"
+          className="text-primary text-5xl mb-6 text-center text-center text-xl5 font-bold  text-black"
         >
-          <div className="relative">
+          {/* <div className="relative">
             <span className="z-10 font-ProtoMono-SemiBold">Splash</span>
             <span className="absolute right-1 font-ProtoMono-SemiBoldShadow text-xl5 ">
               Splash
             </span>
-          </div>
+          </div> */}
+          <Image
+            alt="Twitter"
+            src="/images/splash-logo.png"
+            width={320}
+            height={320}
+            priority
+            className="pl-9 sm:pl-0"
+          />
         </Link>
       </div>
-      <div className="flex items-center justify-between">
+      <div className="items-center justify-center sm:flex md:justify-between">
         <div className="mx-6">
           <Link
             href="/twitter"
-            className="text-md hover:text-primary mb-6 text-center font-bold "
+            className="text-md hover:text-primary mb-6 text-center font-bold hover:opacity-70"
           >
             <Image
               alt="Twitter"
@@ -36,7 +44,7 @@ const Navbar = () => {
         <div className="mx-6">
           <Link
             href="/discord"
-            className="text-md hover:text-primary mb-6 text-center font-bold "
+            className="text-md hover:text-primary mb-6 text-center font-bold hover:opacity-70"
           >
             <Image
               alt="Discord"

@@ -39,6 +39,7 @@ const Showcase = () => {
           width={220}
           height={220}
           priority
+          className="hidden md:block"
         />
         <Image
           alt="Video"
@@ -46,6 +47,7 @@ const Showcase = () => {
           width={620}
           height={620}
           priority
+          className="hidden md:block"
         />
       </div>
     </div>

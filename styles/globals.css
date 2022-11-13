@@ -32,12 +32,14 @@ body {
   font-family: Do-Hyeon, sans-serif, Arial, Helvetica, -apple-system;
 }
 
-body {
+html {
   background: url("../public/images/splash-bg-home.svg");
-  overflow: hidden;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: top;
-  max-width: 100%;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 a {
