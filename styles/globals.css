@@ -2,13 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "ProtoMono-Light";
+  src: url("../public/fonts/proto-mono-light/webfonts/proto-mono-light.ttf");
+}
+@font-face {
+  font-family: "ProtoMono-LightShadow";
+  src: url("../public/fonts/proto-mono-light-shadow/webfonts/proto-mono-light-shadow.ttf");
+}
+@font-face {
+  font-family: "ProtoMono-SemiBold";
+  src: url("../public/fonts/proto-mono-semi-bold/webfonts/proto-mono-semi-bold.ttf");
+}
+@font-face {
+  font-family: "ProtoMono-SemiBoldShadow";
+  src: url("../public/fonts/proto-mono-semi-bold-shadow/webfonts/proto-mono-semi-bold-shadow.ttf");
+}
+@font-face {
+  font-family: "Do-Hyeon";
+  src: url("../public/fonts/do-hyeon/DoHyeon-Regular.ttf");
+}
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+  font-family: Do-Hyeon, sans-serif, Arial, Helvetica, -apple-system;
+  overflow: hidden;
 }
 
 a {
@@ -20,7 +42,7 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
@@ -28,4 +50,4 @@ a {
     color: white;
     background: black;
   }
-}
+} */

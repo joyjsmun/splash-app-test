@@ -3,29 +3,42 @@ module.exports = {
   content: [
     "./pages/**/*.{js,jsx,ts,tsx}",
     "./components/**/*.{js,jsx,ts,tsx}",
-    
   ],
   theme: {
     extend: {
-      cursor: {
-        
-      },
+      cursor: {},
       fontFamily: {
         // 'sans': ['Proxima Nova', ...defaultTheme.fontFamily.sans],
-        'bebas': ['Bebas Neue', 'cursive'],
-        'nato':['Noto Sans JP', 'sans-serif'],
-        'ProtoMono-Light':['ProtoMono-Light', 'Helvetica', 'Arial', 'Sans-Serif'],
-        'ProtoMono-LightShadow':['ProtoMono-LightShadow', 'Helvetica', 'Arial', 'Sans-Serif'],
-        'ProtoMono-SemiBold':['ProtoMono-SemiBold', 'Helvetica', 'Arial', 'Sans-Serif'],
-        
+        bebas: ["Bebas Neue", "cursive"],
+        nato: ["Noto Sans JP", "sans-serif"],
+        "ProtoMono-Light": [
+          "ProtoMono-Light",
+          "Helvetica",
+          "Arial",
+          "Sans-Serif",
+        ],
+        "ProtoMono-LightShadow": [
+          "ProtoMono-LightShadow",
+          "Helvetica",
+          "Arial",
+          "Sans-Serif",
+        ],
+        "ProtoMono-SemiBold": [
+          "ProtoMono-SemiBold",
+          "Helvetica",
+          "Arial",
+          "Sans-Serif",
+        ],
+        "ProtoMono-SemiBoldShadow": [
+          "ProtoMono-SemiBoldShadow",
+          "Helvetica",
+          "Arial",
+          "Sans-Serif",
+        ],
+        "Do-Hyeon": ["Do-Hyeon", "Helvetica", "Arial", "Sans-Serif"],
       },
-      keyframes: {
-       
-      }
+      keyframes: {},
     },
   },
-  plugins: [
-   
-]
-,
-}
+  plugins: [],
+};
