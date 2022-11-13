@@ -39,6 +39,22 @@ module.exports = {
       },
       keyframes: {},
     },
+
+    fontSize: {
+      sm: "0.8rem",
+      base: "1rem",
+      xl: "1.25rem",
+      xl2: "1.563rem",
+      xl3: "1.953rem",
+      xl4: "2.441rem",
+      xl5: "3.052rem",
+    },
+    // fontSize: {
+    //   // sm: ["14px", "20px"],
+    //   // base: ["16px", "24px"],
+    //   // lg: ["20px", "28px"],
+    //   // xl: ["24px", "32px"],
+    // },
   },
   plugins: [],
 };

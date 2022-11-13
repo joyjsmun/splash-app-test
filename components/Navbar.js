@@ -4,15 +4,15 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between px-24 py-24">
+    <nav className="max-w-100vw flex justify-between pt-20 pb-10 pl-20 pr-24">
       <div className="logo">
         <Link
           href="/"
-          className="text-primary mb-6 text-center text-5xl font-bold text-black"
+          className="text-primary text-5xl mb-6 text-center text-xl5 font-bold  text-black"
         >
           <div className="relative">
             <span className="z-10 font-ProtoMono-SemiBold">Splash</span>
-            <span className="absolute right-1 font-ProtoMono-SemiBoldShadow  ">
+            <span className="absolute right-1 font-ProtoMono-SemiBoldShadow text-xl5 ">
               Splash
             </span>
           </div>
@@ -29,6 +29,7 @@ const Navbar = () => {
               src="/images/twitter.svg"
               width={30}
               height={30}
+              priority
             />
           </Link>
         </div>
@@ -42,6 +43,7 @@ const Navbar = () => {
               src="/images/discord.svg"
               width={30}
               height={30}
+              priority
             />
           </Link>
         </div>

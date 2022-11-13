@@ -8,7 +8,7 @@ const Layout = ({
   children,
   title = "Splash - Invest by watching content",
 }) => (
-  <div className="flex h-full flex-col ">
+  <div className="flex h-full flex-col">
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -16,7 +16,7 @@ const Layout = ({
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Navbar />
-    <main>{children}</main>
+    <main className="mb-20 ">{children}</main>
   </div>
 );
 
