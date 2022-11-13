@@ -30,7 +30,14 @@ body {
   /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
   font-family: Do-Hyeon, sans-serif, Arial, Helvetica, -apple-system;
+}
+
+body {
+  background: url("../public/images/splash-bg-home.svg");
   overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: top;
+  max-width: 100%;
 }
 
 a {

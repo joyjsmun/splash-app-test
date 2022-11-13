@@ -4,67 +4,48 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-around py-9">
-      <div className="">
+    <nav className="flex justify-between px-24 py-24">
+      <div className="logo">
         <Link
           href="/"
           className="text-primary mb-6 text-center text-5xl font-bold text-black"
         >
-          {/* <div className="relative">
+          <div className="relative">
             <span className="z-10 font-ProtoMono-SemiBold">Splash</span>
             <span className="absolute right-1 font-ProtoMono-SemiBoldShadow  ">
               Splash
             </span>
-          </div> */}
-
-          <div
-            className="absolute left-0 top-0  h-full w-full"
-            style={{
-              background: "url(/images/splash-logo.svg)",
-              backgroundSize: "20%",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "top",
-            }}
-          ></div>
+          </div>
         </Link>
       </div>
       <div className="flex items-center justify-between">
         <div className="mx-6">
           <Link
-            href="/"
+            href="/twitter"
             className="text-md hover:text-primary mb-6 text-center font-bold "
           >
-            Home
+            <Image
+              alt="Twitter"
+              src="/images/twitter.svg"
+              width={30}
+              height={30}
+            />
           </Link>
         </div>
         <div className="mx-6">
           <Link
-            href="/streamer"
+            href="/discord"
             className="text-md hover:text-primary mb-6 text-center font-bold "
           >
-            Streamer Toolbox
-          </Link>
-        </div>
-        <div>
-          <Link
-            href="/streams"
-            className="text-md hover:text-primary mb-6 text-center font-bold "
-          >
-            Stream Manager
+            <Image
+              alt="Discord"
+              src="/images/discord.svg"
+              width={30}
+              height={30}
+            />
           </Link>
         </div>
       </div>
-      <div>
-        {/* <Input
-          placeholder="Search"
-          className="input w-full max-w-xs rounded-md bg-gray-800 text-white"
-        /> */}
-      </div>
-      {/* <Button
-        label="Connect Wallet"
-        primary
-        onClick={() => alert("clicked!")}
-      /> */}
     </nav>
   );
 };
