@@ -4,10 +4,7 @@ import Head from "next/head";
 
 import Navbar from "./Navbar";
 
-const Layout = ({
-  children,
-  title = "Splash - Invest by watching content",
-}) => (
+const Layout = ({ children, title = "Splash - Invest by Watching" }) => (
   <div className="flex h-full flex-col">
     <Head>
       <title>{title}</title>
