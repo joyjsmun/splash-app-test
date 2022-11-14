@@ -10,12 +10,6 @@ const Navbar = () => {
           href="/"
           className="text-primary text-5xl mb-6 text-center text-center text-xl5 font-bold  text-black"
         >
-          {/* <div className="relative">
-            <span className="z-10 font-ProtoMono-SemiBold">Splash</span>
-            <span className="absolute right-1 font-ProtoMono-SemiBoldShadow text-xl5 ">
-              Splash
-            </span>
-          </div> */}
           <Image
             alt="Twitter"
             src="/images/splash-logo.png"
