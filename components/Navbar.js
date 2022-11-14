@@ -26,7 +26,7 @@ const Navbar = () => {
           />
         </Link>
       </div>
-      <div className="items-center justify-center sm:flex md:justify-between">
+      <div className="flex items-center justify-center md:justify-between">
         <div className="mx-6">
           <Link
             href="/twitter"

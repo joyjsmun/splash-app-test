@@ -7,7 +7,7 @@ const Showcase = () => {
   };
 
   return (
-    <div className="flex justify-around">
+    <div className="flex flex-col justify-around md:flex-row">
       <div className="showcase-left self-center">
         <h1 className="max-w-md font-Do-Hyeon text-xl5">
           Invest by Watching Your Favorite Content
@@ -47,7 +47,7 @@ const Showcase = () => {
           width={620}
           height={620}
           priority
-          className="hidden md:block"
+          className="mx-3 block pt-3"
         />
       </div>
     </div>
