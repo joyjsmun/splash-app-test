@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="mx-6">
           <Link
             href="/twitter"
-            className="text-md hover:text-primary mb-6 text-center font-bold hover:opacity-70"
+            className="text-md font-bold hover:text-primary mb-6 text-center hover:opacity-70"
           >
             <Image
               alt="Twitter"

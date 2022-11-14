@@ -63,7 +63,7 @@ const Showcase = () => {
 
   return (
     <div className="flex flex-col justify-around md:flex-row">
-      <div className="showcase-left self-center">
+      <div className="showcase-left pt-3 leading-medium-loose self-end">
         <h1 className="max-w-md text-center font-Do-Hyeon text-xl5 sm:text-left">
           Invest by Watching Your Favorite Content
         </h1>
@@ -83,7 +83,7 @@ const Showcase = () => {
           <button
             type="submit"
             onClick={handleSubmit}
-            className="mt-2 w-full rounded-xl border-b-4 border-black bg-white p-4 font-ProtoMono-SemiBold hover:border-b-2 sm:mt-0 sm:ml-3 sm:w-auto sm:flex-none"
+            className="mt-2 w-full rounded-xl border-b-4 border-2 border-black bg-white p-4 font-ProtoMono-SemiBold hover:border-b-2 sm:mt-0 sm:ml-3 sm:w-auto sm:flex-none"
           >
             Stay Updated
           </button>
@@ -111,19 +111,12 @@ const Showcase = () => {
         </div>
       </div>
       <div className="showcase-right self-start">
-        <Image
-          alt="Coins"
-          src="/images/coins-illustration.svg"
-          width={220}
-          height={220}
-          priority
-          className="hidden md:block"
-        />
+      
         <Image
           alt="Video"
-          src="/images/right-showcase-illustration.svg"
-          width={620}
-          height={620}
+          src="/images/right-group.svg"
+          width={650}
+          height={650}
           priority
           className="mx-3 block pt-3"
         />
