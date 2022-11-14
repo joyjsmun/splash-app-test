@@ -37,15 +37,15 @@ const Showcase = () => {
   return (
     <div className="flex flex-col justify-around md:flex-row">
       <div className="showcase-left self-center">
-        <h1 className="max-w-md font-Do-Hyeon text-xl5">
+        <h1 className="max-w-md text-center font-Do-Hyeon text-xl5 sm:text-left">
           Invest by Watching Your Favorite Content
         </h1>
-        <p className="py-6 font-ProtoMono-LightShadow text-xl2">
+        <p className="py-6 text-center font-ProtoMono-LightShadow text-xl2 sm:text-left">
           Experience the benefits of Web3
         </p>
-        <div className="flex">
+        <div className="flex flex-col items-center justify-center px-3 sm:flex-row sm:px-0">
           <input
-            className="flex-1 rounded-xl border-2 border-black bg-white p-4 placeholder:font-ProtoMono-SemiBold"
+            className="w-full rounded-xl border-2 border-black bg-white p-4 placeholder:font-ProtoMono-SemiBold sm:w-auto sm:flex-1"
             type="email"
             id="email"
             defaultValue=""
@@ -55,7 +55,7 @@ const Showcase = () => {
           <button
             type="submit"
             onClick={handleSubmit}
-            className="ml-3 rounded-xl border-b-4 border-black bg-white p-4 font-ProtoMono-SemiBold hover:border-b-2"
+            className="mt-2 w-full rounded-xl border-b-4 border-black bg-white p-4 font-ProtoMono-SemiBold hover:border-b-2 sm:mt-0 sm:ml-3 sm:w-auto sm:flex-none"
           >
             Stay Updated
           </button>
