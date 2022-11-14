@@ -105,7 +105,7 @@ const Showcase = () => {
             onChange={handleOnCheckChange}
             checked={consented}
           />
-          <label className="px-3 text-gray-700" htmlFor="consent">
+          <label className="px-3 text-gray-800" htmlFor="consent">
             I consent to receiving emails.
           </label>
         </div>

@@ -29,8 +29,8 @@ const Navbar = () => {
             <Image
               alt="Twitter"
               src="/images/twitter.svg"
-              width={30}
-              height={30}
+              width={33}
+              height={33}
               priority
             />
           </Link>
@@ -43,8 +43,8 @@ const Navbar = () => {
             <Image
               alt="Discord"
               src="/images/discord.svg"
-              width={30}
-              height={30}
+              width={33}
+              height={33}
               priority
             />
           </Link>
