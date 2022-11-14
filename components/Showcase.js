@@ -29,7 +29,6 @@ const Showcase = () => {
     e.preventDefault();
     if (validateEmail(email)) {
       if (consented) {
-        console.log("submitting: ", email);
         await addEmailToDb();
         setEmail("");
         setConsented(false);
@@ -40,13 +39,11 @@ const Showcase = () => {
   };
 
   const handleChange = (e) => {
-    console.log("onChange: ", e.target.value);
     setEmail(e.target.value);
     setErrors({ email: "", consent: "" });
   };
 
   const handleOnCheckChange = (e) => {
-    console.log("onCheckChange: ", e.target.value);
     setConsented(() => !consented);
     setErrors({ email: "", consent: "" });
   };
@@ -58,8 +55,6 @@ const Showcase = () => {
           .from("leads")
           .upsert({ email }, { ignoreDuplicates: false })
           .select();
-
-        console.log("data: ", data);
       } catch (err) {
         console.log("failed to add email: ", err);
       }
