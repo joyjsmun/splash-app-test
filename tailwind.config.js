@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      lineHeight: {
+        'medium-loose': '1.8'
+      },
       cursor: {},
       fontFamily: {
         // 'sans': ['Proxima Nova', ...defaultTheme.fontFamily.sans],

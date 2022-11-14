@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <nav className="max-w-100vw flex-col pt-20 pb-10 pl-20 pr-24 sm:flex-row md:flex md:justify-between">
+    <nav className="max-w-100vw flex-col pt-20 pb-[2rem] pl-[8rem] pr-[8rem] sm:flex-row md:flex md:justify-between">
       <div className="logo">
         <Link
           href="/"
@@ -12,7 +12,7 @@ const Navbar = () => {
         >
           <Image
             alt="Twitter"
-            src="/images/splash-logo.png"
+            src="/images/splash-logo-revised.png"
             width={320}
             height={320}
             priority
