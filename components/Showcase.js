@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 const Showcase = () => {
-  const handleClick = (e) => {
-    console.log("clicked");
+  const [email, setEmail] = useState("");
+  const [errors, setErrors] = useState({
+    email: "",
+  });
+
+  const validateEmail = (emailAddress) => {
+    let isValid = true;
+    if (typeof emailAddress !== "undefined" && emailAddress !== "") {
+      const pattern = new RegExp(
+        /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
+      );
+
+      if (!pattern.test(emailAddress)) {
+        isValid = false;
+        setErrors({ email: "Please enter a valid email address" });
+      }
+    }
+    return isValid;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateEmail(email)) {
+      console.log("submitting: ", email);
+    }
+  };
+
+  const handleChange = (e) => {
+    console.log("onChange: ", e.target.value);
+    setEmail(e.target.value);
   };
 
   return (
@@ -18,19 +46,23 @@ const Showcase = () => {
         <div className="flex">
           <input
             className="flex-1 rounded-xl border-2 border-black bg-white p-4 placeholder:font-ProtoMono-SemiBold"
-            type="text"
-            id="firstName"
+            type="email"
+            id="email"
             defaultValue=""
             placeholder="Enter Email"
+            onChange={handleChange}
           />
           <button
             type="submit"
-            onClick={handleClick}
+            onClick={handleSubmit}
             className="ml-3 rounded-xl border-b-4 border-black bg-white p-4 font-ProtoMono-SemiBold hover:border-b-2"
           >
             Stay Updated
           </button>
         </div>
+        <span className="font-ProtoMono-Light text-red-500">
+          {errors.email}
+        </span>
       </div>
       <div className="showcase-right self-start">
         <Image
