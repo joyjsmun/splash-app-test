@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="logo">
         <Link
           href="/"
-          className="text-primary text-5xl mb-6 text-center text-center text-xl5 font-bold  text-black"
+          className="text-primary text-5xl mb-6 text-center text-xl5 font-bold  text-black"
         >
           <Image
             alt="Twitter"
