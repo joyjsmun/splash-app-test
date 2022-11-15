@@ -35,14 +35,15 @@ body {
 html {
   /* background: url("../public/images/splash-bg-home.svg"); */
   background: radial-gradient(
-    at left bottom,
-    rgb(134, 239, 172),
-    rgb(59, 130, 246),
-    rgb(147, 51, 234)
+    at left top,
+    rgb(251, 253, 252),
+    rgb(72, 140, 248),
+    rgb(187, 131, 240)
   );
   /* background: radial-gradient(at left bottom, rgb(56, 189, 248), rgb(59, 130, 246)); */
   background-repeat: no-repeat;
   background-position: top;
+  height: 103vh;
 }
 
 body {
