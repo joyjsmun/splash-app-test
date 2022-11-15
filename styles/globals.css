@@ -40,10 +40,16 @@ html {
     rgb(72, 140, 248),
     rgb(187, 131, 240)
   );
-  /* background: radial-gradient(at left bottom, rgb(56, 189, 248), rgb(59, 130, 246)); */
-  background-repeat: no-repeat;
+  /* background: rgb(233, 146, 241); */
+  /* background: radial-gradient(
+    circle,
+    rgba(233, 146, 241, 1) 0%,
+    rgba(88, 124, 255, 1) 53%,
+    rgba(250, 250, 250, 1) 100%
+  ); */
+
+  /* background-repeat: no-repeat; */
   background-position: top;
-  height: 103vh;
 }
 
 body {
