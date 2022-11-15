@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="logo">
         <Link
           href="/"
-          className="text-primary text-5xl mb-6 text-center text-xl5 font-bold  text-black"
+          className="text-primary text-5xl mb-6 text-center font-bold  text-black"
         >
           <Image
             alt="Twitter"
@@ -16,7 +16,7 @@ const Navbar = () => {
             width={320}
             height={320}
             priority
-            className="pl-9 sm:pl-0"
+            className="pl-0"
           />
         </Link>
       </div>
@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="mx-6">
           <Link
             href="/twitter"
-            className="text-md font-bold hover:text-primary mb-6 text-center hover:opacity-70"
+            className="text-md hover:text-primary mb-6 text-center font-bold hover:opacity-70"
           >
             <Image
               alt="Twitter"
