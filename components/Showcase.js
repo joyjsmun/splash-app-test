@@ -75,7 +75,6 @@ const Showcase = () => {
             className="w-full rounded-xl border-2 border-black bg-white p-4 placeholder:font-ProtoMono-SemiBold sm:w-auto sm:flex-1"
             type="email"
             id="email"
-            defaultValue=""
             value={email}
             placeholder="Enter Email"
             onChange={handleChange}
