@@ -64,10 +64,10 @@ const Showcase = () => {
   return (
     <div className="flex flex-col justify-around md:flex-row">
       <div className="showcase-left self-end pt-3 leading-medium-loose">
-        <h1 className="max-w-md text-center font-Do-Hyeon text-xl5 sm:text-left">
+        <h1 className="max-w-md text-center font-Do-Hyeon text-xl3 sm:text-left sm:text-xl5">
           Invest by Watching Your Favorite Content
         </h1>
-        <p className="py-6 text-center font-ProtoMono-LightShadow text-xl2 sm:text-left">
+        <p className="text-2xl py-6 text-center font-ProtoMono-LightShadow sm:text-left sm:text-xl3">
           Experience the benefits of Web3
         </p>
         <div className="flex flex-col items-center justify-center px-3 sm:flex-row sm:px-0">
@@ -96,7 +96,7 @@ const Showcase = () => {
         </span>
         <div className="flex items-center">
           <input
-            className="my-3 h-5 w-5"
+            className="w-5m my-3 ml-3 h-5 sm:ml-0"
             type="checkbox"
             id="consent"
             name="consent"
