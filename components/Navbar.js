@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "@nextui-org/react";
 
 const Navbar = () => {
   return (
@@ -20,8 +21,9 @@ const Navbar = () => {
           />
         </Link>
       </div>
+
       <div className="flex items-center justify-center md:justify-between">
-        <div className="mx-6">
+        {/* <div className="mx-6">
           <Link
             href="/twitter"
             className="text-md hover:text-primary mb-6 text-center font-bold hover:opacity-70"
@@ -48,7 +50,10 @@ const Navbar = () => {
               priority
             />
           </Link>
-        </div>
+        </div> */}
+        <Button size={"sm"} color="primary">
+          Gm Ser
+        </Button>
       </div>
     </nav>
   );
