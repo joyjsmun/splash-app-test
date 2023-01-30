@@ -1,20 +1,25 @@
-import React from "react"
+import React from "react";
 
-import Head from "next/head"
+import Head from "next/head";
 
-import Navbar from "./Navbar"
+import Navigation from "./Navigation";
+import { Box } from "./Box";
 
 type LayoutProps = {
-  children: React.ReactNode
-  title: string
-}
+  children: React.ReactNode;
+  title: string;
+};
 
 const Layout: React.FC<LayoutProps> = ({ children }) => (
-  <div className="flex h-full flex-col">
-    <Navbar />
-    <main className="mb-20 ">{children}</main>
+  <Box
+    css={{
+      maxW: "100%",
+    }}
+  >
+    <Navigation />
+    <main>{children}</main>
     {/* Footer */}
-  </div>
-)
+  </Box>
+);
 
-export default Layout
+export default Layout;
