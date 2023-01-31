@@ -1,5 +1,3 @@
-// pages/_document.js
-
 import React from "react";
 import Document, {
   Html,
@@ -9,7 +7,6 @@ import Document, {
   DocumentContext,
   DocumentInitialProps,
 } from "next/document";
-import { CssBaseline } from "@nextui-org/react";
 
 class MyDocument extends Document {
   static async getInitialProps(
@@ -25,7 +22,9 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>{CssBaseline.flush()}</Head>
+        <Head>
+          <title>Splash - Invest by Watching</title>
+        </Head>
         <body>
           <Main />
           <NextScript />

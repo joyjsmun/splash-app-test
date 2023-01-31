@@ -1,69 +1,44 @@
-import React from "react";
 import "../styles/globals.css";
-import Layout from "../components/Layout";
 import type { AppProps } from "next/app";
-import { createTheme, NextUIProvider, Theme } from "@nextui-org/react";
-import { globalCss } from "@nextui-org/react";
+import { ChakraProvider } from "@chakra-ui/react";
+import Layout from "@components/Layout";
+import { extendTheme, ThemeConfig } from "@chakra-ui/react";
 
-const theme = createTheme({
-  type: "light", // it could be "light" or "dark"
-  theme: {
-    colors: {
-      // brand colors
-      primaryLight: "#E7CBFD",
-      primaryLightHover: "$purple300",
-      primaryLightActive: "$purple400",
-      primaryLightContrast: "$purple600",
-      primary: "#7554FA",
-      primaryBorder: "$purple500",
-      primaryBorderHover: "$purple600",
-      primarySolidHover: "$purple700",
-      primarySolidContrast: "$white",
-      primaryShadow: "$purple500",
+import "@fontsource/figtree/400.css";
+import "@fontsource/figtree/500.css";
+import "@fontsource/figtree/700.css";
 
-      secondaryLight: "$cyan200",
-      secondaryLightHover: "$cyan300",
-      secondaryLightActive: "$cyan400",
-      secondaryLightContrast: "$cyan600",
-      secondary: "#70DFFD",
-      secondaryBorder: "$cyan500",
-      secondaryBorderHover: "$cyan600",
-      secondarySolidHover: "$cyan700",
-      secondarySolidContrast: "$white",
-      secondaryShadow: "$cyan500",
-
-      gradient: "linear-gradient(to right, $brightBlue, $purple)",
-      // link: '#5E1DAD',
-
-      // custom colors
-      brightBlue: "#70DFFD",
-      spWhite: "#FAFAFA",
-      lightPurple: "#E7CBFD",
-      purple: "#7554FA",
-      darkBlue: "#0E0D37",
-      // myColor: '#ff4ecd'
-
-      // backgroundColor: "#70DFFD",
-
-      // ...  more colors
+const chakraTheme: ThemeConfig = extendTheme({
+  styles: {
+    global: {
+      body: {
+        backgroundColor: "#0E0D37",
+        overflowX: "hidden",
+      },
     },
-    space: {},
-    fonts: {},
+  },
+  fonts: {
+    heading: `'Figtree', sans-serif`,
+    body: `'Figtree', sans-serif`,
+  },
+  colors: {
+    brand: {
+      darkBlue: "#0E0D37",
+      purple: "#7554FA",
+      lightPurple: "#E7CBFD",
+      brightBlue: "#70DFFD",
+      white: "#FAFAFA",
+    },
   },
 });
 
-const globalStyles = globalCss({
-  html: { margin: 0, background: "#0E0D37" },
-});
-
 function MyApp({ Component, pageProps }: AppProps) {
-  globalStyles();
   return (
-    <NextUIProvider theme={theme}>
+    <ChakraProvider resetCSS theme={chakraTheme}>
       <Layout title="Splash - Invest by Watching">
         <Component {...pageProps} />
       </Layout>
-    </NextUIProvider>
+    </ChakraProvider>
   );
 }
 
