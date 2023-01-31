@@ -1,47 +1,37 @@
 import React from "react";
-import Image from "next/image";
 import {
-  Navbar,
-  Link,
+  Button,
+  Row,
+  Container,
+  Image,
   Text,
-  Card,
-  Spacer,
-  Radio,
-  useTheme,
+  Link,
+  Col,
 } from "@nextui-org/react";
-import { Button } from "@nextui-org/react";
+
+import splashLogo from "/images/splash-logo.svg";
 
 const Navigation = () => {
   return (
-    <Navbar
-      variant="sticky"
-      css={{ boxShadow: "none", backgroundColor: "transparent" }}
-    >
-      <Navbar.Brand css={{ boxShadow: "none" }}>
-        {/* Logo */}
-        <Text b color="inherit" hideIn="xs">
-          ACME
-        </Text>
-      </Navbar.Brand>
-      <Navbar.Content activeColor={"primary"} hideIn="xs" variant={"default"}>
-        <Navbar.Link href="#">Features</Navbar.Link>
-        <Navbar.Link isActive href="#">
-          Customers
-        </Navbar.Link>
-        <Navbar.Link href="#">Pricing</Navbar.Link>
-        <Navbar.Link href="#">Company</Navbar.Link>
-      </Navbar.Content>
-      <Navbar.Content>
-        <Navbar.Link color="inherit" href="#">
-          Login
-        </Navbar.Link>
-        <Navbar.Item>
-          <Button auto flat as={Link} href="#">
-            Gm Gm Sers!!!
-          </Button>
-        </Navbar.Item>
-      </Navbar.Content>
-    </Navbar>
+    <Container fluid direction="row" justify="space-between" gap={1}>
+      <Row justify="flex-start">
+        <Image src="/images/splash-logo.svg" width={140} />
+        <Button
+          auto
+          flat
+          as={Link}
+          href="#"
+          // css={{
+          //   backgroundColor: "transparent",
+          //   color: "$brightBlue",
+          //   border: "1px solid $brightBlue",
+          // }}
+          color={"gradient"}
+        >
+          Go to App
+        </Button>
+      </Row>
+    </Container>
   );
 };
 

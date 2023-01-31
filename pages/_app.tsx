@@ -3,18 +3,13 @@ import "../styles/globals.css";
 import Layout from "../components/Layout";
 import type { AppProps } from "next/app";
 import { createTheme, NextUIProvider, Theme } from "@nextui-org/react";
+import { globalCss } from "@nextui-org/react";
 
 const theme = createTheme({
   type: "light", // it could be "light" or "dark"
   theme: {
     colors: {
       // brand colors
-      brightBlue: "#70DFFD",
-      white: "#FAFAFA",
-      lightPurple: "#E7CBFD",
-      purple: "#7554FA",
-      darkPurple: "#0E0D37",
-
       primaryLight: "#E7CBFD",
       primaryLightHover: "$purple300",
       primaryLightActive: "$purple400",
@@ -26,11 +21,26 @@ const theme = createTheme({
       primarySolidContrast: "$white",
       primaryShadow: "$purple500",
 
-      gradient:
-        "linear-gradient(112deg, $brightBlue -25%, $lightPurple -10%, $purple500 80%)",
+      secondaryLight: "$cyan200",
+      secondaryLightHover: "$cyan300",
+      secondaryLightActive: "$cyan400",
+      secondaryLightContrast: "$cyan600",
+      secondary: "#70DFFD",
+      secondaryBorder: "$cyan500",
+      secondaryBorderHover: "$cyan600",
+      secondarySolidHover: "$cyan700",
+      secondarySolidContrast: "$white",
+      secondaryShadow: "$cyan500",
+
+      gradient: "linear-gradient(to right, $brightBlue, $purple)",
       // link: '#5E1DAD',
 
-      // you can also create your own color
+      // custom colors
+      brightBlue: "#70DFFD",
+      spWhite: "#FAFAFA",
+      lightPurple: "#E7CBFD",
+      purple: "#7554FA",
+      darkBlue: "#0E0D37",
       // myColor: '#ff4ecd'
 
       // backgroundColor: "#70DFFD",
@@ -42,13 +52,18 @@ const theme = createTheme({
   },
 });
 
+const globalStyles = globalCss({
+  html: { margin: 0, background: "#0E0D37" },
+});
+
 function MyApp({ Component, pageProps }: AppProps) {
+  globalStyles();
   return (
-    <Layout title="Splash - Invest by Watching">
-      <NextUIProvider theme={theme}>
+    <NextUIProvider theme={theme}>
+      <Layout title="Splash - Invest by Watching">
         <Component {...pageProps} />
-      </NextUIProvider>
-    </Layout>
+      </Layout>
+    </NextUIProvider>
   );
 }
 

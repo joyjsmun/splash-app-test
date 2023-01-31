@@ -11,15 +11,18 @@ type LayoutProps = {
 };
 
 const Layout: React.FC<LayoutProps> = ({ children }) => (
-  <Box
-    css={{
-      maxW: "100%",
-    }}
-  >
+  // <Box
+  //   css={{
+  //     // maxW: "100",
+  //     h: "100vh",
+  //     background: "$lightPurple",
+  //   }}
+  // >
+  <>
     <Navigation />
     <main>{children}</main>
     {/* Footer */}
-  </Box>
+  </>
 );
 
 export default Layout;
