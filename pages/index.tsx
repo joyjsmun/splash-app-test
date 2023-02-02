@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Box
-        width="160vw"
+        width="100vw"
         bgColor="brand.darkBlue"
         bgImage="url('/images/showcase-blur-bg.svg')"
         bgSize="cover"
