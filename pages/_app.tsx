@@ -26,8 +26,10 @@ const chakraTheme: ThemeConfig = extendTheme({
       darkBlue: "#0E0D37",
       purple: "#7554FA",
       lightPurple: "#E7CBFD",
-      brightBlue: "#70DFFD",
+      // brightBlue: "#70DFFD",
+      brightBlue: "#00c9ff",
       white: "#FAFAFA",
+      gray: "#7C7A85",
     },
   },
 });

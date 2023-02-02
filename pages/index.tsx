@@ -1,5 +1,11 @@
 import { Text, Box } from "@chakra-ui/react";
+import PassiveIncome from "@components/PassiveIncome";
+import HowWorks from "@components/HowWorks";
+import Problem from "@components/Problem";
 import Showcase from "@components/Showcase";
+import Why from "@components/Why";
+import Footer from "@components/Footer";
+import Test from "@components/test";
 
 export default function Home() {
   return (
@@ -18,6 +24,11 @@ export default function Home() {
         backgroundBlendMode="mutiply"
       ></Box>
       <Showcase />
+      <Problem />
+      <HowWorks />
+      <Why />
+      <PassiveIncome />
+      <Footer />
     </>
   );
 }
