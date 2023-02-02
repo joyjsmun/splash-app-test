@@ -12,7 +12,7 @@ import {
 
 const Showcase: React.FC = () => {
   return (
-    <Container maxW="7xl" centerContent>
+    <Container maxW="7xl" centerContent my={12}>
       <Flex
         direction={{ base: "column-reverse", lg: "row" }}
         color="white"

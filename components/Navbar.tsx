@@ -6,7 +6,7 @@ const Navbar: React.FC = () => {
     <Flex
       justify={{ base: "space-around", sm: "space-between" }}
       px={{ base: 1, sm: 3, md: 12, lg: 40 }}
-      py={6}
+      py={9}
     >
       <Link href="/" _hover={{ opacity: 0.7 }}>
         <Image src="/images/splash-logo.svg" alt="Splash" />
