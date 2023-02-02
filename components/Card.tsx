@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 
 const IMAGE1 = "/images/problem-1.svg";
-const IMAGE2 = "/images/problem-2.svg";
+const IMAGE2 = "/images/problem-2.png";
 const IMAGE3 = "/images/problem-3.svg";
 
 export default function Card() {
@@ -71,12 +71,12 @@ export default function Card() {
             </Box>
             <Stack pt={10} align={"center"}>
               <Heading fontSize={"xl"} fontFamily={"body"} fontWeight={600}>
-                Unfair Financial Incentives
+                Monetizing is challenging{" "}
               </Heading>
               <Stack direction={"row"} align={"center"}>
                 <Text textAlign={"center"} color={"brand.gray"}>
-                  Revenue is unfairly distributed between the platform and
-                  users.
+                  Smaller creators find it difficult to monetize their content
+                  on YouTube
                 </Text>
               </Stack>
             </Stack>
@@ -101,11 +101,12 @@ export default function Card() {
             </Box>
             <Stack pt={10} align={"center"}>
               <Heading fontSize={"xl"} fontFamily={"body"} fontWeight={600}>
-                Censorship
+                Unfair Financial Incentives
               </Heading>
               <Stack direction={"row"} align={"center"}>
                 <Text textAlign={"center"} color={"brand.gray"}>
-                  Creators are facing the threat of being de-platformed.
+                  Revenue is unfairly distributed between the platform and
+                  users.
                 </Text>
               </Stack>
             </Stack>
