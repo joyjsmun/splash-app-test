@@ -16,7 +16,7 @@ import Card from "./Card";
 
 const PassiveIncome: React.FC = () => {
   return (
-    <Container maxW={"7xl"} py={10} textAlign={"center"}>
+    <Container maxW={"5xl"} py={10} textAlign={"center"}>
       <Flex direction="column" py={20}>
         <Box>
           <Text color="white" fontSize="3xl" as="b">

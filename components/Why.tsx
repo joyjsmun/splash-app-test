@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Flex,
   Heading,
@@ -14,6 +14,20 @@ import {
 import Card from "./Card";
 
 const Why: React.FC = () => {
+  const [currentPrice, setCurrentPrice] = useState<number>(600);
+
+  const maxPrice = 60000;
+
+  useEffect(() => {
+    if (currentPrice == maxPrice) return;
+
+    const priceTimer = setInterval(() => {
+      setCurrentPrice((prev) => prev + 1);
+    }, 60);
+
+    return () => clearInterval(priceTimer);
+  }, [currentPrice]);
+
   return (
     <Flex direction="column" py={20}>
       <Grid px={"15%"}>
@@ -40,11 +54,11 @@ const Why: React.FC = () => {
                 Earn Every Second
               </Text>
               <Text color="white" fontSize="3xl" as="b">
-                $10,000,000
+                {/* $10,000,000 */}${currentPrice}
               </Text>
 
               <Text color="white" pt={10}>
-                Earn 7% per year on all the money you are depositing in Alluo.
+                Earn interest-bearing tokens for every second you watch a video.
                 Interest accrues in real time and you can withdraw at any time.
                 There are no hidden fees, no minimum balances, and no reason to
                 wait.

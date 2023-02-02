@@ -5,7 +5,7 @@ import Problem from "@components/Problem";
 import Showcase from "@components/Showcase";
 import Why from "@components/Why";
 import Footer from "@components/Footer";
-import Test from "@components/test";
+// import Test from "@components/test";
 
 export default function Home() {
   return (
