@@ -21,7 +21,11 @@ const Showcase: React.FC = () => {
         px={12}
         pb={10}
       >
-        <Flex direction="column" gap={3}>
+        <Flex
+          direction="column"
+          gap={3}
+          justify={{ base: "center", lg: "flex-start" }}
+        >
           <Heading lineHeight={"1.5em"} py={6} size={"2xl"}>
             Earn interest by watching content you love
           </Heading>

@@ -53,9 +53,10 @@ const Why: React.FC = () => {
               <Text color="white" fontSize="3xl" as="b">
                 Earn Every Second
               </Text>
-              <Text color="white" fontSize="3xl" as="b">
-                {/* $10,000,000 */}${currentPrice}
-              </Text>
+              <Flex color="white" as="b" align="center">
+                <Text fontSize="3xl">$</Text>
+                <Text fontSize="4xl">{currentPrice}</Text>
+              </Flex>
 
               <Text color="white" pt={10}>
                 Earn interest-bearing tokens for every second you watch a video.

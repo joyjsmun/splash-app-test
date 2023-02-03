@@ -42,7 +42,12 @@ const HowTabs: React.FC = () => {
                 </GridItem>
 
                 <GridItem px={"10"} pt={"10"}>
-                  <Image pt={3} src="/images/number1.png" width={"4em"} />
+                  <Image
+                    pt={3}
+                    src="/images/number1.png"
+                    width={"4em"}
+                    mx={{ base: "auto", lg: 0 }}
+                  />
                   <Heading
                     fontSize={"xl"}
                     color="white"
@@ -67,7 +72,12 @@ const HowTabs: React.FC = () => {
                 </GridItem>
 
                 <GridItem px={"10"} pt={"10"}>
-                  <Image pt={3} src="/images/number2.png" width={"4em"} />
+                  <Image
+                    pt={3}
+                    src="/images/number2.png"
+                    width={"4em"}
+                    mx={{ base: "auto", lg: 0 }}
+                  />
                   <Heading
                     fontSize={"xl"}
                     color="white"
@@ -93,7 +103,12 @@ const HowTabs: React.FC = () => {
                 </GridItem>
 
                 <GridItem px={"10"} pt={"10"}>
-                  <Image pt={3} src="/images/number3.png" width={"4em"} />
+                  <Image
+                    pt={3}
+                    src="/images/number3.png"
+                    width={"4em"}
+                    mx={{ base: "auto", lg: 0 }}
+                  />
                   <Heading
                     fontSize={"xl"}
                     color="white"
@@ -119,7 +134,11 @@ const HowTabs: React.FC = () => {
                 }}
               >
                 <GridItem display={"flex"} justifyContent={"center"} py={10}>
-                  <Image width={"15em"} src="/images/creator_icon1.svg" />
+                  <Image
+                    width={"15em"}
+                    src="/images/creator_icon1.svg"
+                    mx={{ base: "auto", lg: 0 }}
+                  />
                 </GridItem>
 
                 <GridItem px={"10"} pt={"10"}>
@@ -144,7 +163,11 @@ const HowTabs: React.FC = () => {
                 }}
               >
                 <GridItem display={"flex"} justifyContent={"center"} py={10}>
-                  <Image width={"15em"} src="/images/creator_icon2.svg" />
+                  <Image
+                    width={"15em"}
+                    src="/images/creator_icon2.svg"
+                    mx={{ base: "auto", lg: 0 }}
+                  />
                 </GridItem>
 
                 <GridItem px={"10"} pt={"10"}>
@@ -169,7 +192,11 @@ const HowTabs: React.FC = () => {
                 }}
               >
                 <GridItem display={"flex"} justifyContent={"center"} py={10}>
-                  <Image width={"15em"} src="/images/creator_icon3.svg" />
+                  <Image
+                    width={"15em"}
+                    src="/images/creator_icon3.svg"
+                    mx={{ base: "auto", lg: 0 }}
+                  />
                 </GridItem>
 
                 <GridItem px={"10"} pt={"10"}>
