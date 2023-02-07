@@ -52,7 +52,7 @@ const MyProfile: React.FC = () => {
             padding={"5px"}
           >
             <Box display={"flex"} gap={"10"} alignItems={"center"}>
-              <Avatar src="/images/profile-avatar.svg" size={"2xl"} />
+              <Avatar src="/images/profile-avatar.svg" size={"xl"} />
               <Box>
                 <Text fontSize={"2xl"} fontWeight={"500"}>
                   poolneo.lens

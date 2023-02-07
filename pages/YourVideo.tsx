@@ -59,7 +59,8 @@ const MyProfile: React.FC = () => {
           >
             <Flex flexDirection={"column"} gap={"10"}>
               <Box display={"flex"} gap={"10"} alignItems={"center"}>
-                <Avatar src="/images/profile-pic.svg" size={"xl"} />
+                {/* <Avatar src="/images/profile-pic.svg" size={"xl"} /> */}
+                <Avatar src="/images/nft-avatar-4.svg" size={"xl"} />
                 <Box>
                   <Text fontSize={"xl"} fontWeight={"500"}>
                     Michaelangelo.lens
