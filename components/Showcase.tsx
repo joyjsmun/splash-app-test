@@ -105,7 +105,7 @@ const Showcase: React.FC = () => {
               <Image src="/images/play.svg" paddingRight={"2"} />
               Play
             </Button>
-            <Flex color="white" flexDirection={"column"}>
+            <Flex color="white" flexDirection={"column"} gap={"2"}>
               <Text fontSize={"lg"} fontWeight={"semibold"}>
                 Expected Earning
               </Text>
@@ -115,7 +115,10 @@ const Showcase: React.FC = () => {
                 gap={"10px"}
                 justifyContent={{ base: "center" }}
               >
-                <Image width={"5"} src="/images/splash-token.svg" />
+                <Image
+                  width={{ base: "5", md: "7" }}
+                  src="/images/splash-token.svg"
+                />
                 <Text fontSize={"lg"} fontWeight={"semibold"}>
                   30
                 </Text>

@@ -96,8 +96,11 @@ const Leaderboard: React.FC = () => {
                 </Flex>
               </Td>
               <Td>
-                <Flex gap={"2"}>
-                  <Image src="/images/splash-token.svg" />
+                <Flex gap={"2"} alignItems={"center"}>
+                  <Image
+                    src="/images/splash-token.svg"
+                    width={{ base: "5", md: "7" }}
+                  />
                   <p>9,883</p>
                 </Flex>
               </Td>
@@ -118,8 +121,11 @@ const Leaderboard: React.FC = () => {
                 </Flex>
               </Td>
               <Td>
-                <Flex gap={"2"}>
-                  <Image src="/images/splash-token.svg" />
+                <Flex gap={"2"} alignItems={"center"}>
+                  <Image
+                    src="/images/splash-token.svg"
+                    width={{ base: "5", md: "7" }}
+                  />
                   <p>9,883</p>
                 </Flex>
               </Td>
@@ -140,8 +146,11 @@ const Leaderboard: React.FC = () => {
                 </Flex>
               </Td>
               <Td>
-                <Flex gap={"2"}>
-                  <Image src="/images/splash-token.svg" />
+                <Flex gap={"2"} alignItems={"center"}>
+                  <Image
+                    src="/images/splash-token.svg"
+                    width={{ base: "5", md: "7" }}
+                  />
                   <p>9,883</p>
                 </Flex>
               </Td>
@@ -163,8 +172,11 @@ const Leaderboard: React.FC = () => {
                 </Flex>
               </Td>
               <Td>
-                <Flex gap={"2"}>
-                  <Image src="/images/splash-token.svg" />
+                <Flex gap={"2"} alignItems={"center"}>
+                  <Image
+                    src="/images/splash-token.svg"
+                    width={{ base: "5", md: "7" }}
+                  />
                   <p>9,883</p>
                 </Flex>
               </Td>
@@ -186,8 +198,11 @@ const Leaderboard: React.FC = () => {
                 </Flex>
               </Td>
               <Td>
-                <Flex gap={"2"}>
-                  <Image src="/images/splash-token.svg" />
+                <Flex gap={"2"} alignItems={"center"}>
+                  <Image
+                    src="/images/splash-token.svg"
+                    width={{ base: "5", md: "7" }}
+                  />
                   <p>9,883</p>
                 </Flex>
               </Td>
