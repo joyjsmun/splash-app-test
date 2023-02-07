@@ -32,7 +32,7 @@ const MyProfile: React.FC = () => {
       width={"100vw"}
     >
       <Flex flexDirection={"column"} color={"white"}>
-        ~{/* Profile Top */}
+        {/* Profile Top */}
         <Box
           width={"full"}
           height={{ base: "230px", md: "400px" }}
