@@ -25,6 +25,19 @@ const MyProfile: React.FC = () => {
       height={{ base: "auto", md: "auto" }}
       width={"100vw"}
     >
+      <Box
+        width="100vw"
+        bgColor="brand.darkBlue"
+        bgImage="url('/images/home-blur-bg.svg')"
+        bgSize="cover"
+        bgPosition="center"
+        bgRepeat="repeat"
+        zIndex={-2}
+        position="absolute"
+        top={"220px"}
+        minHeight={{ base: "1000px", sm: "900px", lg: "3000px" }}
+        backgroundBlendMode="mutiply"
+      ></Box>
       <Flex flexDirection={"column"} color={"white"}>
         {/* Profile Top */}
         <Box
