@@ -22,7 +22,9 @@ const Showcase: React.FC = () => {
       bg={"gray.600"}
       height={{ base: "600px", md: "586px" }}
       mb={{ base: "none", md: "100px" }}
-      background="url('/images/showcase-image.svg')"
+      ml={{ base: "unset", md: "100px" }}
+      background="url('/images/showcase-image2.svg')"
+      bgSize="cover"
       width={"100vw"}
       marginBottom={{ base: "20px", md: "100px" }}
     >
