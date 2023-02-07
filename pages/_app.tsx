@@ -12,7 +12,7 @@ const chakraTheme: ThemeConfig = extendTheme({
   styles: {
     global: {
       body: {
-        backgroundColor: "#0E0D37",
+        backgroundColor: "#111827",
         overflowX: "hidden",
       },
     },

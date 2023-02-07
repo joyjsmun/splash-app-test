@@ -22,9 +22,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <title>Splash - Invest by Watching</title>
-        </Head>
+        <Head>Splash - Invest by Watching</Head>
         <body>
           <Main />
           <NextScript />

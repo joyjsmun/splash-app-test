@@ -7,36 +7,94 @@ import {
   Link,
   Image,
   Container,
+  Avatar,
   Box,
 } from "@chakra-ui/react";
 
+import { ViewIcon } from "@chakra-ui/icons";
+
 const Showcase: React.FC = () => {
   return (
-    <Container maxW="7xl" centerContent my={12}>
+    <Container
+      centerContent
+      maxWidth={"100%"}
+      marginTop={{ base: "0px", md: "-5px" }}
+      bg={"gray.600"}
+      height={{ base: "600px", md: "586px" }}
+      mb={{ base: "none", md: "100px" }}
+      background="url('/images/showcase-image.svg')"
+      width={"100vw"}
+      marginBottom={{ base: "20px", md: "100px" }}
+    >
       <Flex
-        direction={{ base: "column-reverse", lg: "row" }}
+        direction={{ base: "column-reverse", md: "column" }}
         color="white"
-        justify="center"
-        align="center"
+        align="flex-start"
         px={12}
         pb={10}
+        position={{ base: "unset", md: "relative" }}
       >
         <Flex
           direction="column"
           gap={3}
-          justify={{ base: "center", lg: "flex-start" }}
+          justify={{ base: "center", md: "flex-start" }}
+          position={{ base: "unset", md: "relative" }}
+          pt={{ base: "100px" }}
+          top="100px"
+          width={{ base: "80vw", md: "70vw" }}
         >
-          <Heading lineHeight={"1.5em"} py={6} size={"2xl"}>
-            Earn interest by watching content you love
+          <Box
+            bg={"gray.700"}
+            borderRadius={"16px"}
+            maxWidth={"70px"}
+            fontSize={"lg"}
+            padding="1"
+            color={"white"}
+            fontWeight={"500"}
+            textAlign={"center"}
+          >
+            14:55
+          </Box>
+          <Heading
+            lineHeight={"1.3em"}
+            pb={6}
+            size={{ base: "xl", md: "2xl" }}
+            width={{ base: "100%", md: "95%" }}
+            mb={{ base: "10" }}
+          >
+            Space-Based Blockchain: The Possibilities of Decentralized Systems
+            in the Final Frontier{" "}
           </Heading>
-          <Text fontSize={"xl"}>Get rewarded for your time and attention</Text>
-          <Flex align="center" my={6} gap={6}>
+          <Flex
+            flexDirection={{ base: "row", md: "row" }}
+            gap="15px"
+            fontSize={{ base: "md", md: "lg" }}
+            fontWeight={"semibold"}
+          >
+            <Avatar
+              size="xs"
+              name="Dan Abrahmov"
+              src="https://bit.ly/dan-abramov"
+            />
+            <Text>Justin B</Text>
+            <Text>|</Text>
+            <ViewIcon display={"flex"} alignSelf={"center"} width={"5"} />
+            <Text>1.2M Views</Text>
+            <Text>|</Text>
+            <Text>6 days ago</Text>
+          </Flex>
+          <Flex
+            align="center"
+            my={{ base: "10", md: "0" }}
+            gap={6}
+            justifyContent={{ base: "center", md: "flex-start" }}
+          >
             <Button
               textTransform="uppercase"
-              backgroundColor="brand.darkBlue"
-              borderColor="#2D293D"
-              borderWidth={1}
-              borderRadius={3}
+              backgroundColor="brand.purple"
+              borderRadius={"12px"}
+              width={"216px"}
+              height={"48px"}
               px={6}
               py={3}
               _hover={{
@@ -44,18 +102,26 @@ const Showcase: React.FC = () => {
                 opacity: 0.7,
               }}
             >
-              Join the Club
+              <Image src="/images/play.svg" paddingRight={"2"} />
+              Play
             </Button>
-            {/* <Flex direction="row">
-              <Image src="/images/Frame.svg" />
-              <Link href="/" textTransform="uppercase" color="brand.brightBlue">
-                Discover
-              </Link>
-            </Flex> */}
+            <Flex color="white" flexDirection={"column"}>
+              <Text fontSize={"lg"} fontWeight={"semibold"}>
+                Expected Earning
+              </Text>
+              <Flex
+                width={"100px"}
+                flexDirection={"row"}
+                gap={"10px"}
+                justifyContent={{ base: "center" }}
+              >
+                <Image width={"5"} src="/images/splash-token.svg" />
+                <Text fontSize={"lg"} fontWeight={"semibold"}>
+                  30
+                </Text>
+              </Flex>
+            </Flex>
           </Flex>
-        </Flex>
-        <Flex>
-          <Image objectFit="cover" src="/images/showcase-illustration.svg" />
         </Flex>
       </Flex>
     </Container>
