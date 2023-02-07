@@ -61,6 +61,7 @@ export default function Video(props: any) {
                     gap={"8px"}
                     paddingLeft={"5px"}
                     paddingTop={"2px"}
+                    fontWeight={"600"}
                   >
                     <Image src="/images/splash-token.svg" width={"5"} />{" "}
                     {props.videoEarn}

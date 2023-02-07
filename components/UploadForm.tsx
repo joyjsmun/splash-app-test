@@ -125,14 +125,14 @@ const UploadForm: React.FC = () => {
               <Box
                 display={"flex"}
                 flexDirection={{ base: "row", md: "column" }}
-                gap={{ base: "10" }}
+                gap={{ base: "10", md: "5" }}
               >
                 <Box fontWeight={"500"} fontSize={{ base: "2xl", md: "xl" }}>
                   Amount
                 </Box>
                 <Flex gap={"5"}>
                   <Image src="/images/splash-token.svg" width={"7"} />
-                  <Text fontWeight={"500"} fontSize={{ base: "2xl", md: "xl" }}>
+                  <Text fontWeight={"600"} fontSize={{ base: "2xl", md: "xl" }}>
                     15
                   </Text>
                 </Flex>
