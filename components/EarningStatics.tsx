@@ -60,7 +60,12 @@ const EarningStatics: React.FC = () => {
             gap={"10px"}
             fontWeight={"600"}
           >
-            <Image src="/images/splash-token.svg" width={"5"} />
+            <Image
+              src="/images/splash-token.svg"
+              width={{ base: "5", md: "7" }}
+              fontSize={"2xl"}
+              fontWeight={"600"}
+            />
             302
           </Text>
         </Box>
@@ -75,6 +80,7 @@ const EarningStatics: React.FC = () => {
             flexDirection={"row"}
             display={"flex"}
             gap={"10px"}
+            fontSize={"2xl"}
             fontWeight={"600"}
           >
             75
@@ -92,6 +98,7 @@ const EarningStatics: React.FC = () => {
             display={"flex"}
             gap={"10px"}
             fontWeight={"600"}
+            fontSize={"2xl"}
           >
             2h 45m
           </Text>

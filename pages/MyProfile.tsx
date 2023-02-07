@@ -32,7 +32,7 @@ const MyProfile: React.FC = () => {
       width={"100vw"}
     >
       <Flex flexDirection={"column"} color={"white"}>
-        {/* Profile Top */}
+        ~{/* Profile Top */}
         <Box
           width={"full"}
           height={{ base: "230px", md: "400px" }}
@@ -64,7 +64,6 @@ const MyProfile: React.FC = () => {
             </Box>
           </Box>
         </Box>
-
         <Tabs marginTop={"10"}>
           <TabList>
             <Tab fontWeight={"600"} fontSize={"lg"}>
@@ -89,7 +88,6 @@ const MyProfile: React.FC = () => {
             </TabPanel>
           </TabPanels>
         </Tabs>
-
         {/* Earning and Statics*/}
       </Flex>
     </Container>

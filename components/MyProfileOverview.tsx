@@ -32,8 +32,17 @@ const MyProfileOverview: React.FC = () => {
             fontSize={"xl"}
           >
             <Text color={"gray.400"}>Current Balance</Text>
-            <Text flexDirection={"row"} display={"flex"} gap={"10px"}>
-              <Image src="/images/splash-token.svg" width={"5"} />
+            <Text
+              flexDirection={"row"}
+              display={"flex"}
+              gap={"10px"}
+              fontSize={"2xl"}
+              fontWeight={"600"}
+            >
+              <Image
+                src="/images/splash-token.svg"
+                width={{ base: "5", md: "7" }}
+              />
               11
             </Text>
           </Box>

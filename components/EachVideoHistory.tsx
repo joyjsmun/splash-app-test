@@ -24,23 +24,37 @@ const EachVideoHistory: React.FC = (props: any) => {
           fontWeight={"500"}
         >
           <div>{props.title}</div>
-          <Flex gap={"3"}>
-            <Image src="/images/splash-token.svg" />
+          <Flex gap={"3"} alignItems={"center"}>
+            <Image
+              src="/images/splash-token.svg"
+              width={{ base: "5", md: "7" }}
+            />
             <div>{props.creator}</div>
           </Flex>
         </Flex>
       </Td>
       <Td>{props.time}</Td>
       <Td>
-        <Flex gap={"5"}>
-          <Image src="/images/splash-token.svg" />
-          <div>{props.earning}</div>
+        <Flex gap={"5"} alignItems={"center"}>
+          <Image
+            src="/images/splash-token.svg"
+            width={{ base: "5", md: "7" }}
+          />
+          <Flex>
+            {" "}
+            <Text fontWeight={"600"}>{props.earning}</Text>
+          </Flex>
         </Flex>
       </Td>
       <Td>
-        <Flex gap={"5"}>
-          <Image src="/images/splash-token.svg" />
-          <div>{props.finalBalance}</div>
+        <Flex gap={"5"} alignItems={"center"}>
+          <Image
+            src="/images/splash-token.svg"
+            width={{ base: "5", md: "7" }}
+          />
+          <div>
+            <Text fontWeight={"600"}>{props.finalBalance}</Text>
+          </div>
         </Flex>
       </Td>
     </Tr>
