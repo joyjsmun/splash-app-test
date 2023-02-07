@@ -9,14 +9,14 @@ export default function Home() {
       <Box
         width="100vw"
         bgColor="brand.darkBlue"
-        bgImage="url('/images/showcase-blur-bg.svg')"
+        bgImage="url('/images/home-blur-bg.svg')"
         bgSize="cover"
         bgPosition="center"
         bgRepeat="repeat"
         zIndex={-2}
         position="absolute"
-        top={"-1020px"}
-        minHeight={{ base: "1000px", sm: "900px", lg: "1600px" }}
+        top={"520px"}
+        minHeight={{ base: "1000px", sm: "900px", lg: "3000px" }}
         backgroundBlendMode="mutiply"
       ></Box>
       <Primary />
