@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Flex,
   Heading,
@@ -20,17 +20,38 @@ const VideoDetail: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [timeSpent, setTimeSpent] = useState(0);
   const [moneyEarned, setMoneyEarned] = useState(0);
-  const rate = 0.01; // $0.01 per second of video watched
+  const rate = 0.1; // $0.01 per second of video watched
 
   const [expectedEarnings, setExpectedEarnings] = useState(0);
 
-  useEffect(() => {
-    const ratePerSecond = 0.1; // replace this with your rate per second
-    const duration = 10; // replace this with the actual duration of the video
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-    const earnings = duration * ratePerSecond;
-    setExpectedEarnings(earnings);
+  useEffect(() => {
+    if (!videoRef.current) {
+      return;
+    }
+
+    const video = videoRef.current;
+
+    video.onloadedmetadata = function () {
+      console.log(`Duration: ${video.duration} seconds`);
+    };
   }, []);
+  useEffect(() => {
+    if (!videoRef.current) {
+      return;
+    }
+
+    const video = videoRef.current;
+
+    video.onloadedmetadata = function () {
+      const ratePerSecond = 0.1;
+      const duration = video.duration;
+
+      const earnings = duration * ratePerSecond;
+      setExpectedEarnings(earnings);
+    };
+  }, [videoRef.current]);
 
   useEffect(() => {
     let intervalId: any;
@@ -38,7 +59,7 @@ const VideoDetail: React.FC = () => {
       intervalId = setInterval(() => {
         setTimeSpent(timeSpent + 1);
         setMoneyEarned(timeSpent * rate);
-      }, 1000); // update time spent and money earned every second
+      }, 1000);
     }
 
     return () => clearInterval(intervalId);
@@ -80,34 +101,16 @@ const VideoDetail: React.FC = () => {
         ></Box> */}
         <div>
           <video
+            id="myVideo"
+            ref={videoRef}
             src={
               "https://lens.infura-ipfs.io/ipfs/QmXDzrC6BwVwTXoC6CmosEMC4DHSJstfYsAfbcjh4CdeCa/nowft-intro.mp4"
+              // "https://lens.infura-ipfs.io/ipfs/QmbCaUZz8TjvARetXFfaJdY6BL3aa9WVR33sV4FKECTgxB/SPLASH%20-%2010%20November%202022.mp4"
             }
             controls={true}
             onClick={handlePlay}
             onKeyDown={handleKeyDown}
           />
-          {/* {isPlaying ? (
-            <button
-              onClick={handlePause}
-              color={"black"}
-              borderRadius={"16px"}
-              paddingX={"30px"}
-            >
-              Pause
-            </button>
-          ) : (
-            <button
-              onClick={handlePlay}
-              color={"black"}
-              borderRadius={"16px"}
-              paddingX={"30px"}
-            >
-              Play
-            </button>
-          )} */}
-          {/* <p>Time Spent: {timeSpent} seconds</p>
-          <p>Money Earned: ${moneyEarned.toFixed(2)}</p> */}
         </div>
 
         <Flex
@@ -251,12 +254,12 @@ const VideoDetail: React.FC = () => {
                   fontSize={"2xl"}
                 >
                   <Image src="/images/splash-token.svg" width={"7"} />
-                  24
+                  {expectedEarnings.toFixed(6)}
                 </Text>
               </Box>
             </Flex>
           </Box>
-          {/* NFT Box */}
+          {/* NFT Box  - future feature*/}
           {/* <Box
             background="linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%)"
             borderRadius={"12px"}
