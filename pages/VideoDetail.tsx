@@ -10,7 +10,6 @@ import {
   Box,
   Avatar,
   Input,
-  borderRadius,
 } from "@chakra-ui/react";
 
 interface Props {
@@ -22,6 +21,16 @@ const VideoDetail: React.FC = () => {
   const [timeSpent, setTimeSpent] = useState(0);
   const [moneyEarned, setMoneyEarned] = useState(0);
   const rate = 0.01; // $0.01 per second of video watched
+
+  const [expectedEarnings, setExpectedEarnings] = useState(0);
+
+  useEffect(() => {
+    const ratePerSecond = 0.1; // replace this with your rate per second
+    const duration = 10; // replace this with the actual duration of the video
+
+    const earnings = duration * ratePerSecond;
+    setExpectedEarnings(earnings);
+  }, []);
 
   useEffect(() => {
     let intervalId: any;
@@ -160,7 +169,7 @@ const VideoDetail: React.FC = () => {
         <Flex
           flexDirection={{ base: "column", md: "row" }}
           justifyContent={"space-between"}
-          paddingY={"10"}
+          paddingY={"4"}
         >
           {/* Earning Box */}
           <Box
@@ -205,7 +214,7 @@ const VideoDetail: React.FC = () => {
                   fontWeight={"500"}
                   fontSize={"2xl"}
                 >
-                  <Image src="/images/chronometer.png" width={"40px"} />
+                  <Image src="/images/timer.png" width={"40px"} />
                   {timeSpent}s
                 </Text>
               </Box>
