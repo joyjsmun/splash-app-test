@@ -1,9 +1,8 @@
-<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="8" cy="8" r="8" fill="#6481E7"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M8.09375 2.37105V10.4469L11.6823 8.32547L8.09375 2.37105Z" fill="#C1CCF5"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M4.50464 8.32547L8.09315 10.4469V2.37105L4.50464 8.32547Z" fill="white"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M8.09338 6.6945L4.50464 8.32542L8.09315 10.4468L11.6819 8.32566L8.09338 6.6945Z" fill="#8299EC"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M8.09375 11.1263V14.0634L11.6846 9.00606L8.09375 11.1263Z" fill="#C1CCF5"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M8.09338 6.6945L4.50464 8.32542L8.09315 10.4468L8.09338 6.6945Z" fill="#C1CCF5"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M4.50464 9.00606L8.09315 14.0631V11.1263L4.50464 9.00606Z" fill="white"/>
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="200" cy="200" r="200" fill="#7554FA"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M232.861 239.848C232.861 279.066 201.042 310.861 161.803 310.861C122.564 310.861 90.7445 279.062 90.7445 239.848H232.861Z" fill="#FAFAFA"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M308.279 161.029C308.279 121.799 276.461 90 237.221 90C197.98 90 166.143 121.799 166.143 161.029H308.279Z" fill="#FAFAFA"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M160.074 233.771C120.819 233.771 89 201.972 89 162.754C89 123.535 120.819 91.74 160.074 91.74V233.771Z" fill="#FAFAFA"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M238.942 309.141C278.185 309.141 310 277.344 310 238.128C310 198.912 278.181 167.097 238.942 167.097V309.141Z" fill="#FAFAFA"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M121.872 167.094L160.074 233.771L275.5 233.77L238.942 167.094H121.872Z" fill="#FAFAFA"/>
 </svg>
