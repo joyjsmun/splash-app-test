@@ -20,7 +20,7 @@ const Showcase: React.FC = () => {
       maxWidth={"100%"}
       marginTop={{ base: "0px", md: "-5px" }}
       bg={"gray.600"}
-      height={{ base: "600px", md: "586px" }}
+      height={{ base: "600px", md: "730px" }}
       mb={{ base: "none", md: "100px" }}
       ml={{ base: "unset", md: "100px" }}
       background="url('/images/showcase-image2.svg')"
