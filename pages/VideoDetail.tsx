@@ -10,6 +10,7 @@ import {
   Box,
   Avatar,
   Input,
+  borderRadius,
 } from "@chakra-ui/react";
 
 interface Props {
@@ -77,11 +78,25 @@ const VideoDetail: React.FC = () => {
             onClick={handlePlay}
             onKeyDown={handleKeyDown}
           />
-          {isPlaying ? (
-            <button onClick={handlePause}>Pause</button>
+          {/* {isPlaying ? (
+            <button
+              onClick={handlePause}
+              color={"black"}
+              borderRadius={"16px"}
+              paddingX={"30px"}
+            >
+              Pause
+            </button>
           ) : (
-            <button onClick={handlePlay}>Play</button>
-          )}
+            <button
+              onClick={handlePlay}
+              color={"black"}
+              borderRadius={"16px"}
+              paddingX={"30px"}
+            >
+              Play
+            </button>
+          )} */}
           {/* <p>Time Spent: {timeSpent} seconds</p>
           <p>Money Earned: ${moneyEarned.toFixed(2)}</p> */}
         </div>
