@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Flex,
   Heading,
@@ -11,9 +11,43 @@ import {
   Avatar,
   Input,
 } from "@chakra-ui/react";
-import Showcase from "components/Showcase";
+
+interface Props {
+  videoUrl: string;
+}
 
 const VideoDetail: React.FC = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [timeSpent, setTimeSpent] = useState(0);
+  const [moneyEarned, setMoneyEarned] = useState(0);
+  const rate = 0.01; // $0.01 per second of video watched
+
+  useEffect(() => {
+    let intervalId: any;
+    if (isPlaying) {
+      intervalId = setInterval(() => {
+        setTimeSpent(timeSpent + 1);
+        setMoneyEarned(timeSpent * rate);
+      }, 1000); // update time spent and money earned every second
+    }
+
+    return () => clearInterval(intervalId);
+  }, [isPlaying, timeSpent]);
+
+  const handlePlay = () => {
+    setIsPlaying(true);
+  };
+
+  const handlePause = () => {
+    setIsPlaying(false);
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLVideoElement>) => {
+    if (event.key === " ") {
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   return (
     <Container
       maxWidth={"80%"}
@@ -25,7 +59,7 @@ const VideoDetail: React.FC = () => {
     >
       <Flex flexDirection={"column"} color={"white"}>
         {/* Video Player */}
-        <Box
+        {/* <Box
           width={"1300px"}
           height={"700px"}
           display={"flex"}
@@ -33,7 +67,25 @@ const VideoDetail: React.FC = () => {
           bgSize="cover"
           bgPosition="center"
           bgRepeat="repeat"
-        ></Box>
+        ></Box> */}
+        <div>
+          <video
+            src={
+              "https://lens.infura-ipfs.io/ipfs/QmXDzrC6BwVwTXoC6CmosEMC4DHSJstfYsAfbcjh4CdeCa/nowft-intro.mp4"
+            }
+            controls={true}
+            onClick={handlePlay}
+            onKeyDown={handleKeyDown}
+          />
+          {isPlaying ? (
+            <button onClick={handlePause}>Pause</button>
+          ) : (
+            <button onClick={handlePlay}>Play</button>
+          )}
+          {/* <p>Time Spent: {timeSpent} seconds</p>
+          <p>Money Earned: ${moneyEarned.toFixed(2)}</p> */}
+        </div>
+
         <Flex
           fontSize={"lg"}
           flexDirection={"row"}
@@ -113,6 +165,41 @@ const VideoDetail: React.FC = () => {
                 gap={"10px"}
                 fontSize={"xl"}
               >
+                <Text color={"gray.400"}>Video Status</Text>
+                <Text
+                  flexDirection={"row"}
+                  display={"flex"}
+                  gap={"10px"}
+                  fontWeight={"500"}
+                  fontSize={"2xl"}
+                >
+                  {isPlaying ? "Playing" : "Paused"}
+                </Text>
+              </Box>
+              <Box
+                display={"flex"}
+                flexDirection={"column"}
+                gap={"10px"}
+                fontSize={"xl"}
+              >
+                <Text color={"gray.400"}>Watching Time</Text>
+                <Text
+                  flexDirection={"row"}
+                  display={"flex"}
+                  gap={"10px"}
+                  fontWeight={"500"}
+                  fontSize={"2xl"}
+                >
+                  <Image src="/images/chronometer.png" width={"40px"} />
+                  {timeSpent}s
+                </Text>
+              </Box>
+              <Box
+                display={"flex"}
+                flexDirection={"column"}
+                gap={"10px"}
+                fontSize={"xl"}
+              >
                 <Text color={"gray.400"}>Current Earnings</Text>
                 <Text
                   flexDirection={"row"}
@@ -121,8 +208,8 @@ const VideoDetail: React.FC = () => {
                   fontWeight={"500"}
                   fontSize={"2xl"}
                 >
-                  <Image src="/images/splash-token.svg" width={"5"} />
-                  11
+                  <Image src="/images/splash-token.svg" width={"7"} />
+                  {moneyEarned.toFixed(2)}
                 </Text>
               </Box>
               <Box
@@ -139,7 +226,7 @@ const VideoDetail: React.FC = () => {
                   fontWeight={"500"}
                   fontSize={"2xl"}
                 >
-                  <Image src="/images/splash-token.svg" width={"5"} />
+                  <Image src="/images/splash-token.svg" width={"7"} />
                   24
                 </Text>
               </Box>
