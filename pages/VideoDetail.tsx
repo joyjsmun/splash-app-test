@@ -69,6 +69,22 @@ const VideoDetail: React.FC = () => {
     setIsPlaying(true);
   };
 
+  useEffect(() => {
+    let intervalId: any;
+    if (isPlaying) {
+      intervalId = setInterval(() => {
+        setTimeSpent(timeSpent + 1);
+        setMoneyEarned(timeSpent * rate);
+        localStorage.setItem("currentEarnings", `${moneyEarned}`);
+      }, 1000);
+    }
+
+    return () => {
+      clearInterval(intervalId);
+      localStorage.setItem("currentEarnings", `${moneyEarned}`);
+    };
+  }, [isPlaying, timeSpent, moneyEarned]);
+
   const handlePause = () => {
     setIsPlaying(false);
   };
