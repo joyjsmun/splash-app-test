@@ -19,8 +19,6 @@ import {
   IconButton,
   Image,
 } from "@chakra-ui/react";
-import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
-
 const Leaderboard: React.FC = () => {
   return (
     <Container

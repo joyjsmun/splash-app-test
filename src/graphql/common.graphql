@@ -103,7 +103,6 @@ fragment PublicationStatsFields on PublicationStats {
 
 fragment MetadataOutputFields on MetadataOutput {
   name
-  image
   description
   content
   media {

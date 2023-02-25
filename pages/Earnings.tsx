@@ -7,8 +7,6 @@ import {
   Th,
   TableCaption,
   Tbody,
-  Td,
-  Tfoot,
   Text,
   Image,
   Flex,

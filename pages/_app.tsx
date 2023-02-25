@@ -2,6 +2,7 @@ import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
 import Layout from "@components/Layout";
 import { extendTheme, ThemeConfig } from "@chakra-ui/react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import "@fontsource/figtree/400.css";
 import "@fontsource/figtree/500.css";
@@ -34,11 +35,15 @@ const chakraTheme: ThemeConfig = extendTheme({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
+  // Create a client
+  const queryClient = new QueryClient();
   return (
     <ChakraProvider resetCSS theme={chakraTheme}>
-      <Layout title="Splash - Invest by Watching">
-        <Component {...pageProps} />
-      </Layout>
+      <QueryClientProvider client={queryClient}>
+        <Layout title="Splash - Invest by Watching">
+          <Component {...pageProps} />
+        </Layout>
+      </QueryClientProvider>
     </ChakraProvider>
   );
 }
