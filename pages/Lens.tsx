@@ -1,27 +1,21 @@
 import { Container } from "@chakra-ui/react";
+import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 import React from "react";
 import {
   PublicationSortCriteria,
   useExplorePublicationsQuery,
 } from "src/graphql/generated";
+import useLogin from "src/lib/auth/UseLogin";
 
 const Lens: React.FC = () => {
-  const { data, isLoading, error } = useExplorePublicationsQuery({
-    request: {
-      sortCriteria: PublicationSortCriteria.TopCollected,
-    },
-  });
+  const address = useAddress();
+  const { mutate: requestLogin } = useLogin();
 
-  console.log({
-    isLoading,
-    error,
-    data,
-  });
-  return (
-    <Container>
-      <h1>Test</h1>
-    </Container>
-  );
+  if (!address) {
+    return <ConnectWallet />;
+  }
+
+  return <button onClick={() => requestLogin()}>Login</button>;
 };
 
 export default Lens;

@@ -1,21 +1,27 @@
 import React from "react";
-import {
-  Flex,
-  Heading,
-  Text,
-  Button,
-  Link,
-  Image,
-  Container,
-  Box,
-} from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 import Showcase from "./Showcase";
 import Leaderboard from "./Leaderboard";
 import RecomendedVideoSection from "./RecomendedVideoSection";
 import TrendingVideoSection from "./TrendingVideoSection";
 import PopularCreatorSection from "./PopularCreatorSection";
+import {
+  PublicationSortCriteria,
+  useExplorePublicationsQuery,
+} from "src/graphql/generated";
+import Lens from "pages/Lens";
 
 const Primary: React.FC = () => {
+  const { data, isLoading, error } = useExplorePublicationsQuery({
+    request: {
+      sortCriteria: PublicationSortCriteria.TopCollected,
+    },
+  });
+  console.log({
+    isLoading,
+    error,
+    data,
+  });
   return (
     <Container
       centerContent
@@ -27,6 +33,7 @@ const Primary: React.FC = () => {
       width={"90vw"}
     >
       <Showcase />
+      <Lens />
       <Leaderboard />
       <RecomendedVideoSection mainTitle="Recommended Videos" />
       <TrendingVideoSection mainTitle="Treanding Videos" />

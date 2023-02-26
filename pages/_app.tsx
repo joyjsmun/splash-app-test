@@ -3,6 +3,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Layout from "@components/Layout";
 import { extendTheme, ThemeConfig } from "@chakra-ui/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ThirdwebProvider, ChainId } from "@thirdweb-dev/react";
 
 import "@fontsource/figtree/400.css";
 import "@fontsource/figtree/500.css";
@@ -35,15 +36,18 @@ const chakraTheme: ThemeConfig = extendTheme({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const desiredChainId = ChainId.Polygon;
   // Create a client
   const queryClient = new QueryClient();
   return (
     <ChakraProvider resetCSS theme={chakraTheme}>
-      <QueryClientProvider client={queryClient}>
-        <Layout title="Splash - Invest by Watching">
-          <Component {...pageProps} />
-        </Layout>
-      </QueryClientProvider>
+      <ThirdwebProvider desiredChainId={desiredChainId}>
+        <QueryClientProvider client={queryClient}>
+          <Layout title="Splash - Invest by Watching">
+            <Component {...pageProps} />
+          </Layout>
+        </QueryClientProvider>
+      </ThirdwebProvider>
     </ChakraProvider>
   );
 }
