@@ -7,17 +7,55 @@ export default async function refreshAccessToken() {
     const currentRefreshToken = readAccessToken()?.refreshToken;
     if(!currentRefreshToken) return null;
 
-    // 2. ask the lens server to refresh the access token
-    const result = await fetcher<RefreshMutation, RefreshMutationVariables>(RefreshDocument, {
-        request:{
-            refreshToken:currentRefreshToken
+
+    async function fetchData<TData, TVariables>(
+        query: string,
+        variables?: TVariables,
+        options?: RequestInit['headers']
+      ):Promise<TData> {
+
+        
+        const res = await fetch("https://api.lens.dev", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            ...options,
+            
+            "Access-Control-Allow-Origin": "*",
+          },
+          body: JSON.stringify({
+            query,
+            variables
+          })
+        })
+     
+        const json = await res.json()
+     
+        if (json.errors) {
+          const { message } = json.errors[0] || {}
+          throw new Error(message || 'Error…')
         }
-    })();
+     
+        return json.data
+      }
 
-
-    const {accessToken, refreshToken:newRefreshToken} = result.refresh;
-    setAccessToken(accessToken,newRefreshToken);
-
-    return accessToken as string;
+// set the new access token in the local storage
+      const result = await fetchData<RefreshMutation, RefreshMutationVariables>(
+        RefreshDocument,
+        {
+          request: {
+            refreshToken: currentRefreshToken,
+          },
+        }
+      );
+    
+      const {
+        refresh: { accessToken, refreshToken: newRefreshToken },
+      } = result;
+    
+      setAccessToken(accessToken, newRefreshToken);
+    
+      return accessToken as string;
+  
       
 }
