@@ -33,7 +33,6 @@ const Primary: React.FC = () => {
       width={"90vw"}
     >
       <Showcase />
-      <Lens />
       <Leaderboard />
       <RecomendedVideoSection mainTitle="Recommended Videos" />
       <TrendingVideoSection mainTitle="Treanding Videos" />

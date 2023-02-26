@@ -23,6 +23,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+import SignInButton from "./SignInButton";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -83,7 +84,7 @@ export default function Navbar() {
           direction={"row"}
           spacing={6}
         >
-          <Button
+          {/* <Button
             display={{ base: "end", md: "inline-flex" }}
             fontSize={"sm"}
             fontWeight={600}
@@ -95,7 +96,8 @@ export default function Navbar() {
             }}
           >
             Connect Wallet
-          </Button>
+          </Button> */}
+          <SignInButton />
         </Stack>
       </Flex>
 

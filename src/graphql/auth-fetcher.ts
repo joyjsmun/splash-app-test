@@ -2,7 +2,8 @@ import { isTokenExpired, readAccessToken } from "src/lib/auth/helpers";
 import refreshAccessToken from "src/lib/auth/refreshAccessToken";
 
 // Lens graphql server endpoint
-const endpoint = "https://api-mumbai.lens.dev";
+//const endpoint = "https://api-mumbai.lens.dev";
+const endpoint = "https://api.lens.dev"
 export const fetcher = <TData, TVariables>(
   query: string,
   variables?: TVariables,
