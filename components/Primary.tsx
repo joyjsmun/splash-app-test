@@ -9,7 +9,7 @@ import {
   PublicationSortCriteria,
   useExplorePublicationsQuery,
 } from "src/graphql/generated";
-import Lens from "pages/Lens";
+import FeedPost from "./FeedPost";
 
 const Primary: React.FC = () => {
   const { data, isLoading, error } = useExplorePublicationsQuery({
@@ -22,6 +22,14 @@ const Primary: React.FC = () => {
     error,
     data,
   });
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  if (error) {
+    return <div>Errors...</div>;
+  }
+
   return (
     <Container
       centerContent
@@ -33,6 +41,10 @@ const Primary: React.FC = () => {
       width={"90vw"}
     >
       <Showcase />
+      {/* Iterate over here */}
+      {data?.explorePublications.items.map((publication) => (
+        <FeedPost key={publication.id} publication={publication} />
+      ))}
       <Leaderboard />
       <RecomendedVideoSection mainTitle="Recommended Videos" />
       <TrendingVideoSection mainTitle="Treanding Videos" />

@@ -1,19 +1,31 @@
 import React from "react";
-import {
-  Text,
-  Stack,
-  Box,
-  Flex,
-  Container,
-  Heading,
-  Button,
-  IconButton,
-  Image,
-} from "@chakra-ui/react";
+import { Text, Flex, Container, Button, Image } from "@chakra-ui/react";
 import Card from "./Video";
 import RecomendedVideos from "./RecomendedVideos";
+import {
+  PublicationSortCriteria,
+  useExplorePublicationsQuery,
+} from "src/graphql/generated";
+import FeedPost from "./FeedPost";
 
 export default function RecomendedVideoSection(props: any) {
+  const { data, isLoading, error } = useExplorePublicationsQuery({
+    request: {
+      sortCriteria: PublicationSortCriteria.TopCollected,
+    },
+  });
+  // console.log({
+  //   isLoading,
+  //   error,
+  //   data,
+  // });
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  if (error) {
+    return <div>Errors...</div>;
+  }
   return (
     <Container maxWidth={{ base: "90%", md: "90%" }} marginTop={"20"}>
       <Flex flexDirection={"row"} justifyContent={"space-between"}>
@@ -44,6 +56,10 @@ export default function RecomendedVideoSection(props: any) {
         </Flex>
       </Flex>
       <Flex paddingTop={"none"}>
+        {/* Iterate over here ->> need to fix */}
+        {/* {data?.explorePublications.items.map((publication) => (
+          <FeedPost key={publication.id} publication={publication} />
+        ))} */}
         <RecomendedVideos />
       </Flex>
     </Container>
