@@ -6,6 +6,7 @@ import RecomendedVideoSection from "./RecomendedVideoSection";
 import TrendingVideoSection from "./TrendingVideoSection";
 import PopularCreatorSection from "./PopularCreatorSection";
 import {
+  PublicationMainFocus,
   PublicationSortCriteria,
   useExplorePublicationsQuery,
 } from "src/graphql/generated";
@@ -14,7 +15,10 @@ import FeedPost from "./FeedPost";
 const Primary: React.FC = () => {
   const { data, isLoading, error } = useExplorePublicationsQuery({
     request: {
-      sortCriteria: PublicationSortCriteria.TopCollected,
+      sortCriteria: PublicationSortCriteria.Latest,
+      metadata: {
+        mainContentFocus: PublicationMainFocus?.Video || "",
+      },
     },
   });
   console.log({

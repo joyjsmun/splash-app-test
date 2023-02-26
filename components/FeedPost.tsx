@@ -2,6 +2,7 @@ import React from "react";
 import { ExplorePublicationsQuery } from "src/graphql/generated";
 import { MediaRenderer } from "@thirdweb-dev/react";
 import { Avatar } from "@chakra-ui/react";
+import Link from "next/link";
 
 type Props = {
   publication: ExplorePublicationsQuery["explorePublications"]["items"][0];
@@ -21,7 +22,9 @@ export default function FeedPost({ publication }: Props) {
       {/* Lens Profile Name */}
       <div>{publication.profile.name || publication.profile.handle}</div>
       {/* Lens Post name */}
-      <div>{publication.metadata.name}</div>
+      <Link href={`/profile/${publication.profile.handle}`}>
+        {publication.metadata.name}
+      </Link>
       {/* Description of the post */}
       <div>{publication.metadata.content}</div>
       {/* Lens Media feed */}
