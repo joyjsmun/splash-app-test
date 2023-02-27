@@ -5,10 +5,9 @@ import {
   useNetwork,
   ChainId,
   ConnectWallet,
-  MediaRenderer,
 } from "@thirdweb-dev/react";
 import useLenseUser from "src/lib/auth/useLensUser";
-import useLogin from "src/lib/auth/useLogin";
+import useLogin from "src/lib/auth/UseLogin";
 
 type Props = {};
 
@@ -25,7 +24,6 @@ export default function SignInButton({}: Props) {
   if (isWrongNetwork) {
     return (
       <button onClick={() => switchNetwork?.(ChainId.Polygon)}>
-        {/* <button onClick={() => switchNetwork?.(ChainId.Mumbai)}> */}
         Switch Network
       </button>
     );
@@ -50,21 +48,7 @@ export default function SignInButton({}: Props) {
   }
 
   if (profileQuery.data?.defaultProfile) {
-    return (
-      <>
-        <MediaRenderer
-          src={profileQuery?.data?.defaultProfile?.picture?.original?.url || ""}
-          alt={profileQuery.data.defaultProfile.name || ""}
-          style={{
-            width: 48,
-            height: 48,
-            borderRadius: 48 / 2,
-          }}
-        />
-
-        {profileQuery.data?.defaultProfile?.handle}
-      </>
-    );
+    return <div>Gm! {profileQuery.data?.defaultProfile?.handle}</div>;
   }
 
   return (

@@ -12,18 +12,13 @@ export default function FeedPost({ publication }: Props) {
   return (
     <div>
       {/* Lens Profile Picture */}
-
-      <MediaRenderer
-        //@ts-ignore
-        src={publication?.profile?.picture?.original?.url || ""}
-        alt={publication.profile.name || publication.profile.handle}
-        style={{
-          width: 36,
-          height: 36,
-          borderRadius: "50%",
-        }}
-      />
-
+      <Avatar size={"sm"}>
+        <MediaRenderer
+          //@ts-ignore
+          src={publication?.profile?.picture?.original?.url || ""}
+          alt={publication.profile.name || publication.profile.handle}
+        />
+      </Avatar>
       {/* Lens Profile Name */}
       <div>{publication.profile.name || publication.profile.handle}</div>
       {/* Lens Post name */}
