@@ -21,11 +21,11 @@ const Primary: React.FC = () => {
       },
     },
   });
-  console.log({
-    isLoading,
-    error,
-    data,
-  });
+  // console.log({
+  //   isLoading,
+  //   error,
+  //   data,
+  // });
 
   if (isLoading) {
     return <div>Loading...</div>;

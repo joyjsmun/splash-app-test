@@ -37,6 +37,7 @@ const chakraTheme: ThemeConfig = extendTheme({
 
 function MyApp({ Component, pageProps }: AppProps) {
   const desiredChainId = ChainId.Polygon;
+  //const desiredChainId = ChainId.Mumbai;
   // Create a client
   const queryClient = new QueryClient();
   return (

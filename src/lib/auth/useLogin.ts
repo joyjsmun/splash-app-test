@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useAddress, useSDK } from "@thirdweb-dev/react";
 import { use } from "react";
 import { useAuthenticateMutation } from "src/graphql/generated";
-import generatChallenge from "./GenerateChallenge";
+import generatChallenge from "./generateChallenge"
 import { setAccessToken } from "./helpers";
 
 export default function useLogin() {

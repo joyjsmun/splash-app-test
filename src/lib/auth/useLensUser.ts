@@ -23,7 +23,7 @@ export default function useLenseUser(){
         }
     );
 
-    console.log(profileQuery.data?.defaultProfile);
+    // console.log(profileQuery.data?.defaultProfile);
     return {
         // localStorage and lens profile information
         isSignedInQuery:localStorageQuery,
