@@ -1,7 +1,6 @@
 import { useAddress, useSDK } from "@thirdweb-dev/react";
 import { useCreateFollowTypedDataMutation } from "src/graphql/generated";
 import omit from "omit-deep";
-import { signTypedDataInternal } from "@thirdweb-dev/sdk/dist/declarations/src/evm/common/sign";
 import { signTypedDataWithOmmited, splitSignature } from "./helpers";
 import { LENS_HUB_ABI, LENS_HUB_CONTRACT_ADDRESS } from "src/const/contracts";
 import { useMutation } from "@tanstack/react-query";
@@ -16,6 +15,10 @@ export function useFollow(){
     const { mutateAsync: loginUser } = useLogin();
 
     async function follow(userId:string){
+        //login
+        await loginUser();
+
+
         // get the typed data for the user to sign in
         const typedData = await requestTypedData({
             request:{

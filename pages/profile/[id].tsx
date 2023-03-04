@@ -5,8 +5,10 @@ import {
 } from "../../src/graphql/generated";
 
 import { useRouter } from "next/router";
-import { MediaRenderer } from "@thirdweb-dev/react";
+import { MediaRenderer, Web3Button } from "@thirdweb-dev/react";
 import FeedPost from "../../components/FeedPost";
+import { LENS_HUB_CONTRACT_ADDRESS, LENS_HUB_ABI } from "src/const/contracts";
+import { useFollow } from "src/lib/useFollow";
 
 type Props = {};
 
@@ -14,6 +16,7 @@ export default function ProfilePage({}: Props) {
   const router = useRouter();
   // Grab the path / [id] field from the URL
   const { id } = router.query;
+  const { mutateAsync: followUser } = useFollow();
 
   const {
     isLoading: loadingProfile,
@@ -84,6 +87,17 @@ export default function ProfilePage({}: Props) {
 
         {/* Profile Description */}
         <p>{profileData?.profile?.bio}</p>
+        <p>
+          {profileData?.profile?.stats.totalFollowers}
+          {"Followers"}
+        </p>
+        <Web3Button
+          contractAddress={LENS_HUB_CONTRACT_ADDRESS}
+          contractAbi={LENS_HUB_ABI}
+          action={async () => await followUser(profileData?.profile?.id)}
+        >
+          Follow
+        </Web3Button>
       </div>
     </div>
   );
