@@ -28,9 +28,13 @@ export default function FeedPost({ publication }: Props) {
       {/* Description of the post */}
       <div>{publication.metadata.content}</div>
       {/* Lens Media feed */}
-      {publication.metadata.media?.length > 0 && (
+      {(publication.metadata.image ||
+        publication.metadata.media?.length > 0) && (
         <MediaRenderer
-          src={publication.metadata.media[0].original.url}
+          src={
+            publication.metadata.image ||
+            publication.metadata.media[0].original.url
+          }
           alt={publication.metadata.name || ""}
         />
       )}

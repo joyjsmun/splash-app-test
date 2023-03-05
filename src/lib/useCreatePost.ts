@@ -26,16 +26,16 @@ type CreatePostArgs = {
     const { mutateAsync: loginUser } = useLogin();
   
     async function createPost({
-      video,
+      image,
       title,
       description,
       content,
     }: CreatePostArgs) {
-      console.log("createPost", video, title, description, content);
+      console.log("createPost", image, title, description, content);
       await loginUser();
   
       // Upload the video to IPFS
-      const videoIpfsUrl = (await uploadToIpfs({ data: [video] }))[0];
+      const videoIpfsUrl = (await uploadToIpfs({ data: [image] }))[0];
   
       console.log("videoIpfsUrl", videoIpfsUrl);
   
@@ -43,14 +43,14 @@ type CreatePostArgs = {
 
       const postMetadata = {
         version: "2.0.0",
-        mainContentFocus: PublicationMainFocus.Video,
+        mainContentFocus: PublicationMainFocus.TextOnly,
         metadata_id: uuidv4(),
         description: description,
         locale: "en-US",
         content: content,
         external_url: null,
-        video: videoIpfsUrl,
-        videoMimeType: null,
+        image: videoIpfsUrl,
+        imageMimeType: null,
         name: title,
         attributes: [],
         tags: [],

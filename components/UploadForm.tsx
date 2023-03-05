@@ -8,14 +8,14 @@ import { LENS_HUB_CONTRACT_ADDRESS, LENS_HUB_ABI } from "src/const/contracts";
 const UploadForm: React.FC = () => {
   const [show, setShow] = React.useState(false);
   const handleToggle = () => setShow(!show);
-  const [video, setVideo] = useState<File | null>(null);
+  const [image, setImage] = useState<File | null>(null);
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [content, setContent] = useState<string>("");
   const { mutateAsync: createPost } = useCreatePost();
 
   console.log("content:", {
-    video,
+    image,
     title,
     description,
     content,
@@ -77,7 +77,7 @@ const UploadForm: React.FC = () => {
                 type="file"
                 onChange={(e) => {
                   if (e.target.files) {
-                    setVideo(e.target.files[0]);
+                    setImage(e.target.files[0]);
                   }
                 }}
               />
@@ -164,10 +164,10 @@ const UploadForm: React.FC = () => {
                     contractAddress={LENS_HUB_CONTRACT_ADDRESS}
                     contractAbi={LENS_HUB_ABI}
                     action={async () => {
-                      if (!video) return;
+                      if (!image) return;
 
                       return await createPost({
-                        video,
+                        image,
                         title,
                         description,
                         content,
