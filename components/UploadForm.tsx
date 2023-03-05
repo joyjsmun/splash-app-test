@@ -1,17 +1,5 @@
 import React, { useState } from "react";
-import {
-  Flex,
-  Text,
-  Container,
-  Box,
-  Avatar,
-  Image,
-  useDisclosure,
-  Button,
-  Input,
-  Collapse,
-  Textarea,
-} from "@chakra-ui/react";
+import { Flex, Text, Box, Image, Collapse, Textarea } from "@chakra-ui/react";
 
 import { Web3Button } from "@thirdweb-dev/react";
 import { useCreatePost } from "../src/lib/useCreatePost";
@@ -20,14 +8,14 @@ import { LENS_HUB_CONTRACT_ADDRESS, LENS_HUB_ABI } from "src/const/contracts";
 const UploadForm: React.FC = () => {
   const [show, setShow] = React.useState(false);
   const handleToggle = () => setShow(!show);
-  const [image, setImage] = useState<File | null>(null);
+  const [video, setVideo] = useState<File | null>(null);
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [content, setContent] = useState<string>("");
   const { mutateAsync: createPost } = useCreatePost();
 
   console.log("content:", {
-    image,
+    video,
     title,
     description,
     content,
@@ -89,7 +77,7 @@ const UploadForm: React.FC = () => {
                 type="file"
                 onChange={(e) => {
                   if (e.target.files) {
-                    setImage(e.target.files[0]);
+                    setVideo(e.target.files[0]);
                   }
                 }}
               />
@@ -109,7 +97,7 @@ const UploadForm: React.FC = () => {
               <input
                 type="text"
                 placeholder="Add a title that describes your video"
-                borderRadius={"13px"}
+                //xborderRadius={"13px"}
                 onChange={(e) => setTitle(e.target.value)}
               />
 
@@ -123,7 +111,7 @@ const UploadForm: React.FC = () => {
                 fontSize={"lg"}
                 placeholder="Tell viewers about your video"
                 size="sm"
-                onChange={(e) => setContent(e.target.value)}
+                onChange={(e) => setDescription(e.target.value)}
               />
             </Box>
           </Flex>
@@ -174,12 +162,12 @@ const UploadForm: React.FC = () => {
                 <Box bg={"brand.purple"} borderRadius={"13px"} fontSize={"xl"}>
                   <Web3Button
                     contractAddress={LENS_HUB_CONTRACT_ADDRESS}
-                    contractAbi={LENS_CONTRACT_ABI}
+                    contractAbi={LENS_HUB_ABI}
                     action={async () => {
-                      if (!image) return;
+                      if (!video) return;
 
                       return await createPost({
-                        image,
+                        video,
                         title,
                         description,
                         content,
