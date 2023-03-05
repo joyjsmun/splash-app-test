@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   useProfileQuery,
   usePublicationsQuery,
@@ -17,6 +17,7 @@ export default function ProfilePage({}: Props) {
   // Grab the path / [id] field from the URL
   const { id } = router.query;
   const { mutateAsync: followUser } = useFollow();
+  const [followSuccessMessage, setFollowSuccessMessage] = useState("");
 
   const {
     isLoading: loadingProfile,
@@ -94,10 +95,14 @@ export default function ProfilePage({}: Props) {
         <Web3Button
           contractAddress={LENS_HUB_CONTRACT_ADDRESS}
           contractAbi={LENS_HUB_ABI}
-          action={async () => await followUser(profileData?.profile?.id)}
+          action={async () => {
+            await followUser(profileData?.profile?.id);
+            setFollowSuccessMessage("Successfully followed the user.");
+          }}
         >
           Follow
         </Web3Button>
+        {followSuccessMessage && <p>{followSuccessMessage}</p>}
       </div>
     </div>
   );
