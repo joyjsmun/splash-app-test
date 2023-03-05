@@ -8,7 +8,7 @@ import {
   MediaRenderer,
 } from "@thirdweb-dev/react";
 import useLenseUser from "src/lib/auth/useLensUser";
-import useLogin from "src/lib/auth/UseLogin";
+import useLogin from "src/lib/auth/useLogin";
 
 type Props = {};
 

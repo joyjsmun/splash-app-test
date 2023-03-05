@@ -12,7 +12,7 @@ import useLogin from "./auth/useLogin";
 import { LENS_HUB_CONTRACT_ADDRESS,LENS_HUB_ABI } from "src/const/contracts";
 
 type CreatePostArgs = {
-    video: File;
+    image: File;
     title: string;
     description: string;
     content: string;
