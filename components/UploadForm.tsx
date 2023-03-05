@@ -14,11 +14,8 @@ import {
 } from "@chakra-ui/react";
 
 import { Web3Button } from "@thirdweb-dev/react";
-import { useCreatePost } from "../lib/useCreatePost";
-import {
-  LENS_HUB_CONTRACT_ADDRESS,
-  LENS_CONTRACT_ABI,
-} from "src/const/contracts";
+import { useCreatePost } from "../src/lib/useCreatePost";
+import { LENS_HUB_CONTRACT_ADDRESS, LENS_HUB_ABI } from "src/const/contracts";
 
 const UploadForm: React.FC = () => {
   const [show, setShow] = React.useState(false);
@@ -27,7 +24,7 @@ const UploadForm: React.FC = () => {
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [content, setContent] = useState<string>("");
-  //  const { mutateAsync: createPost } = useCreatePost();
+  const { mutateAsync: createPost } = useCreatePost();
 
   console.log("content:", {
     image,
